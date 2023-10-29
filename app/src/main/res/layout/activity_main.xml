@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-2dp"
+    android:background="@drawable/background5">
+
+    <TextView
+        android:id="@+id/tv_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginTop="91dp"
+        android:text="BMI Claculator"
+        android:textColor="#0D0DEA"
+        android:textSize="51sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_weight"
+        android:layout_width="301dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="51dp"
+        android:background="@drawable/bg_with_rounded_border"
+        android:ems="10"
+        android:hint="Enter weight in kg"
+        android:inputType="number"
+        android:padding="9dp"
+        android:textColorHint="#F10647"
+        app:layout_constraintEnd_toEndOf="@+id/tv_heading"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/tv_heading"
+        app:layout_constraintTop_toBottomOf="@+id/tv_heading"
+
+
+        />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="301dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/bg_with_rounded_border"
+        android:ems="10"
+        android:hint="Enter age "
+        android:inputType="number"
+        android:padding="9dp"
+        android:textColorHint="#F10647"
+        app:layout_constraintEnd_toEndOf="@+id/et_weight"
+        app:layout_constraintStart_toStartOf="@+id/et_weight"
+        app:layout_constraintTop_toBottomOf="@+id/et_weight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="41dp"
+        android:background="@drawable/bg_with_rounded_border"
+        android:padding="21dp"
+        app:layout_constraintEnd_toEndOf="@+id/age"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="@+id/age"
+        app:layout_constraintTop_toBottomOf="@+id/age">
+
+        <TextView
+            android:id="@+id/tv_height_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="101"
+            android:textSize="51sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_height_lable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:text="Height in cm"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tv_height_value"
+            app:layout_constraintStart_toStartOf="@+id/tv_height_value"
+            app:layout_constraintTop_toBottomOf="@+id/tv_height_value" />
+
+        <SeekBar
+            android:id="@+id/height_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:max="201"
+            android:progress="51"
+            android:progressTint="@color/black"
+            android:thumb="@drawable/seekbar_thumb"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_height_lable"
+            app:layout_constraintHorizontal_bias="0.323"
+            app:layout_constraintStart_toStartOf="@+id/tv_height_lable"
+            app:layout_constraintTop_toBottomOf="@+id/tv_height_value"
+            app:layout_constraintVertical_bias="0.272"
+
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_calculate_bmi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button1"
+        android:text="Calculate BMI"
+        android:textColor="@color/white"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_result_view"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/tv_result_view"
+        app:layout_constraintTop_toBottomOf="@+id/tv_result_view"
+        app:layout_constraintVertical_bias="0.89" />
+
+    <TextView
+        android:id="@+id/tv_result_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="31dp"
+        android:background="@drawable/bg_with_rounded_border"
+        android:text="Result"
+        android:padding="11dp"
+        android:textColor="#F10647"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/layout_height"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="@+id/layout_height"
+        app:layout_constraintTop_toBottomOf="@+id/layout_height" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
